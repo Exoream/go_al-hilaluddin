@@ -34,7 +34,7 @@ func (s *student) Decode() string {
 		ascii := int(value)
 		ascii = ascii - key
 		if value >= 'a' && value <= 'z' {
-			ascii = ((ascii - int('a')) % 26) + int('a')
+			ascii = ((ascii - int('a')) + 26 ) % 26 + int('a')
 		}
 		nameDecode += string(rune(ascii))
 	}
@@ -56,11 +56,11 @@ func main() {
 		fmt.Print("\nEncode of student’s name " + a.name + " is : " + c.Encode())
 	} else if menu == 2 {
 		fmt.Print("\nInput Student Name: ")
-		fmt.Scan(&a.name)
-		fmt.Print("\nDecode of student’s name " + a.name + " is : " + c.Decode())
+		fmt.Scan(&a.nameEncode)
+		fmt.Print("\nDecode of student’s name " + a.nameEncode + " is : " + c.Decode())
 	} else if menu == 3 {
 		break 
 	}
-		fmt.Println("\n\n")
+		fmt.Println("\n")
 	}
 }
