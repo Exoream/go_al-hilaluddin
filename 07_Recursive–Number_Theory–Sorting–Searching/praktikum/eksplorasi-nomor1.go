@@ -11,8 +11,21 @@ func MaxSequence(arr []int) int {
 	resultSum := arr[0]
 
 	for _, value := range arr[1:] {
-		currentSum = max(value, (currentSum + value))
-		resultSum = max(resultSum, currentSum)
+		// Versi 1
+		// currentSum = max(value, (currentSum + value))
+		// resultSum = max(resultSum, currentSum) 
+
+		// Versi 2
+		hasil := currentSum + value
+		if value > hasil {
+			currentSum = value
+		} else {
+			currentSum = hasil
+		}
+
+		if currentSum > resultSum {
+			resultSum = currentSum 
+		} 
 	}
 	return resultSum
 }
