@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 06, 2023 at 03:09 PM
+-- Generation Time: Sep 07, 2023 at 03:16 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.5
 
@@ -160,7 +160,8 @@ ALTER TABLE `payment_methods`
 -- Indexes for table `payment_method_description`
 --
 ALTER TABLE `payment_method_description`
-  ADD PRIMARY KEY (`id_payment`);
+  ADD PRIMARY KEY (`id_payment`),
+  ADD UNIQUE KEY `id_payment` (`id_payment`);
 
 --
 -- Indexes for table `product`
