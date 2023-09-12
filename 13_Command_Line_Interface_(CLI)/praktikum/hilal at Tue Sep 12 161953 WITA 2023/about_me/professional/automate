@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# Mengecek jumlah argumen yang diberikan
+if [ "$#" -ne 3 ]; then
+    echo "Usage: $0 <name> <facebook_username> <linkedin_username>"
+    exit 1
+fi
+
+
+name="$1"
+facebook_username="$2"
+linkedin_username="$3"
+
+
+echo "https://www.linkedin.com/in/$linkedin_username" > linkedin.txt
