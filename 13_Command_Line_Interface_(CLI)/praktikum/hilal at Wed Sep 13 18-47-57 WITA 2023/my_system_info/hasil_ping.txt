@@ -1,0 +1,8 @@
+PING google.com (142.251.12.138) 56(84) bytes of data.
+64 bytes from se-in-f138.1e100.net (142.251.12.138): icmp_seq=1 ttl=58 time=41.0 ms
+64 bytes from se-in-f138.1e100.net (142.251.12.138): icmp_seq=2 ttl=58 time=41.0 ms
+64 bytes from se-in-f138.1e100.net (142.251.12.138): icmp_seq=3 ttl=58 time=41.0 ms
+
+--- google.com ping statistics ---
+3 packets transmitted, 3 received, 0% packet loss, time 2004ms
+rtt min/avg/max/mdev = 40.970/41.001/41.044/0.031 ms

@@ -1,0 +1,1 @@
+Pada jam di folder tanda titik 2 tidak bisa terbaca di windows maka hasilnya akan terlihat acak, sehingga saya menggantinya ke tanda (-)

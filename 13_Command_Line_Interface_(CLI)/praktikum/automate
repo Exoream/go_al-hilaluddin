@@ -1,0 +1,34 @@
+if [ "$#" -ne 3 ]; then
+    echo "Usage: $0 <name> <facebook_username> <linkedin_username>"
+    exit 1
+fi
+
+name="$1"
+facebook_username="$2"
+linkedin_username="$3"
+
+# Membuat nama folder utama dengan timestamp
+timestamp="$(date '+%a %b %d %H:%M:%S %Z %Y')"
+mainFolder="$1 at $timestamp"
+
+# Membuat direktori utama
+mkdir -p "$mainFolder/about_me/personal"
+mkdir -p "$mainFolder/about_me/professional"
+mkdir -p "$mainFolder/my_friends"
+mkdir -p "$mainFolder/my_system_info"
+
+# Memasukkan Data ke facebook.txt dan linkedin.txt
+echo "https://www.facebook.com/$2" > "$mainFolder/about_me/personal/facebook.txt"
+echo "https://www.linkedin.com/in/$3" > "$mainFolder/about_me/professional/linkedin.txt"
+
+# Copy List Friend yang Berasal dari url
+url="https://gist.githubusercontent.com/tegarimansyah/e91f335753ab2c7fb12815779677e914/raw/94864388379fecee450fde26e3e73bfb2bcda194/list%2520of%2520my%2520friends.txt"
+curl -o "$mainFolder/my_friends/list_of_my_friends.txt" "$url"
+
+# Memasukkan Nama User dan uname -a
+mySystemInfo="$mainFolder/my_system_info"
+echo "My Username: $(whoami)" > "$mySystemInfo/about_this_laptop.txt"
+echo "With host: $(uname -a)" >> "$mySystemInfo/about_this_laptop.txt"
+
+# Memasukkan Ping Google 3x
+ping -c 3 google.com > "$mySystemInfo/hasil_ping.txt"
