@@ -1,3 +1,4 @@
+# Pengecekan Kondisi agar script ketika dipanggil tidak kurang atau lebih
 if [ "$#" -ne 3 ]; then
     echo "Usage: $0 <name> <facebook_username> <linkedin_username>"
     exit 1
