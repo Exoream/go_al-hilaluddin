@@ -33,7 +33,20 @@
 					"name": "nomor-2",
 					"request": {
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": {
+							"raw": "https://jsonplaceholder.typicode.com/posts/3",
+							"protocol": "https",
+							"host": [
+								"jsonplaceholder",
+								"typicode",
+								"com"
+							],
+							"path": [
+								"posts",
+								"3"
+							]
+						}
 					},
 					"response": []
 				},
@@ -63,7 +76,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "https://jsonplaceholder.typicode.com/posts",
+							"raw": "https://jsonplaceholder.typicode.com/posts/1",
 							"protocol": "https",
 							"host": [
 								"jsonplaceholder",
@@ -71,7 +84,8 @@
 								"com"
 							],
 							"path": [
-								"posts"
+								"posts",
+								"1"
 							]
 						}
 					},
@@ -132,8 +146,24 @@
 				{
 					"name": "DELETE",
 					"request": {
-						"method": "GET",
-						"header": []
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://virtserver.swaggerhub.com/sepulsa/RentABook-API/1.0.0/client/1",
+							"protocol": "https",
+							"host": [
+								"virtserver",
+								"swaggerhub",
+								"com"
+							],
+							"path": [
+								"sepulsa",
+								"RentABook-API",
+								"1.0.0",
+								"client",
+								"1"
+							]
+						}
 					},
 					"response": []
 				},
@@ -141,7 +171,22 @@
 					"name": "GET",
 					"request": {
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": {
+							"raw": "https://virtserver.swaggerhub.com/sepulsa/RentABook-API/1.0.0/client",
+							"protocol": "https",
+							"host": [
+								"virtserver",
+								"swaggerhub",
+								"com"
+							],
+							"path": [
+								"sepulsa",
+								"RentABook-API",
+								"1.0.0",
+								"client"
+							]
+						}
 					},
 					"response": []
 				}
