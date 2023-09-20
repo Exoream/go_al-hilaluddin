@@ -1,6 +1,5 @@
 # 16 Intro Echo Golang
 
-## Kesimpulan
 
 ## Third Party Library Golang
 Dalam bahasa pemrograman Go, "third-party library" merujuk kepada perpustakaan (library) yang dikembangkan oleh pihak ketiga atau bukan oleh pengembang bahasa Go sendiri. Penggunaan library ini membantu menghemat waktu dan upaya pengembangan, mempercepat proses pengembangan, dan memungkinkan penggunaan fungsionalitas yang matang yang telah dikembangkan oleh komunitas yang lebih luas. Beberapa contoh third party library yaitu Echo, Go Kit, Logrus, gorm.io, cobra dan masih banyak lainnya.
