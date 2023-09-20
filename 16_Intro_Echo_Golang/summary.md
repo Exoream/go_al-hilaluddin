@@ -1,24 +1,28 @@
-## 16 Intro Echo Golang
-## Kesimpulan
+# 16 Intro Echo Golang
+# Kesimpulan
 
 
-# Third Party Library Golang
+## Third Party Library Golang
 Dalam bahasa pemrograman Go, "third-party library" merujuk kepada perpustakaan (library) yang dikembangkan oleh pihak ketiga atau bukan oleh pengembang bahasa Go sendiri. Penggunaan library ini membantu menghemat waktu dan upaya pengembangan, mempercepat proses pengembangan, dan memungkinkan penggunaan fungsionalitas yang matang yang telah dikembangkan oleh komunitas yang lebih luas. Beberapa contoh third party library yaitu Echo, Go Kit, Logrus, gorm.io, cobra dan masih banyak lainnya.
 
 
-# Framework Echo
+## Framework Echo
 Echo merupakan salah satu framework web yang digunakan pada bahasa golang. Framework Echo dikenal karena kesederhanaannya, performa tinggi, dan minimalisme. Ini menyediakan fitur untuk routing, penanganan middleware, rendering data, skalabilitas, dan data binding sehingga cocok untuk mengembangkan RESTful API dan aplikasi web.
 
 
-# Cara instal Echo
+## Cara instal Echo
+
+```
 cd ~/project_name
 go mod init myapp
 go get github.com/labstack/echo/v4
 
+```
 
-# Basic Routing dan Controller Echo
+## Basic Routing dan Controller Echo
 Routing dalam konteks pengembangan web adalah proses menentukan bagaimana aplikasi web menangani permintaan HTTP yang masuk. Kontroler adalah bagian dari aplikasi web yang bertanggung jawab untuk menangani logika bisnis dan memproses permintaan HTTP yang masuk. Contoh dari Routing dan Controller
 
+```
 package main
 // import Echo dan net/http
 import (
@@ -43,10 +47,12 @@ func UserController(c echo.Context) error {
     return c.String(http.StatusOk, "Budi")
 }
 
+```
 
-# Data Rendering Format JSON
+## Data Rendering Format JSON
 Data rendering adalah proses mengambil data dari aplikasi dan mengubahnya menjadi bentuk yang sesuai untuk ditampilkan kepada pengguna akhir melalui antarmuka pengguna. Dalam kasus ini kita mengubah ke format JSON. Contohnya
 
+```
 // import Echo dan net/http
 import (
     "net/http"
@@ -80,9 +86,12 @@ func getDataHandler(c echo.Context) error {
     return c.JSON(http.StatusOK, data)
 }
 
-# Data Retrive Url Params
+```
+
+## Data Retrive Url Params
 Data retrieval from URL params (pengambilan data dari parameter URL) adalah proses mengambil data atau nilai yang terdapat dalam URL sebuah permintaan HTTP. Contohnya
 
+```
 package main
 
 import (
@@ -125,9 +134,12 @@ func main() {
     e.Start(":8080")
 }
 
+```
 
-# Data Retrive Query Param
+## Data Retrive Query Param
 Data retrieval from query parameters (pengambilan data dari parameter query) adalah proses mengambil data atau nilai yang terdapat dalam URL sebagai bagian dari query string dalam sebuah permintaan HTTP. Contohnya
+
+```
 
 package main
 
@@ -153,8 +165,12 @@ func main() {
     e.Start(":8080")
 }
 
-# Data Retrive Form Value
+```
+
+## Data Retrive Form Value
 Data retrieval from form values (pengambilan data dari nilai formulir) adalah proses mengambil data yang dikirimkan melalui formulir HTML dalam permintaan HTTP. Form values adalah cara umum untuk mengirimkan data dari sisi klien (peminta) ke sisi server (penyedia) dalam aplikasi web. Contohnya
+
+```
 
 package main
 
@@ -208,10 +224,12 @@ func main() {
     e.Start(":8080")
 }
 
+```
 
-# Binding Data
+## Binding Data
 Binding data dalam konteks pengembangan web adalah proses menghubungkan atau mengikat data yang diterima dalam permintaan HTTP ke variabel atau struktur data yang dapat digunakan dalam kode aplikasi. Contohnya
 
+```
 package main
 
 import (
@@ -244,5 +262,6 @@ func main() {
     e.Start(":8080")
 }
 
+```
  
 
