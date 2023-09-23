@@ -13,7 +13,6 @@ ORM adalah singkatan dari "Object-Relational Mapping." Ini adalah sebuah konsep 
 ~ Mudah melakukan penyaringan atau pemfilteran data sebelum menyimpan didatabase
 ~ Beberapa memiliki cache query
 ~ Menghindari typo jika menulis query manual
-
 ```
 
 ## Kekurangan ORM
@@ -23,7 +22,6 @@ ORM adalah singkatan dari "Object-Relational Mapping." Ini adalah sebuah konsep 
 ~ Menjalankan database relasional yang tidak perlu
 ~ Query yang kompleks mengakibatkan penulisan yang panjang
 ~ Fungsi sql tertentu yang terkait dengan satu vendor mungkin tidak didukung
-
 ```
 ## Database Migration
 Database migration adalah proses untuk mengelola perubahan skema basis data seiring waktu. Ini melibatkan mengubah struktur basis data, seperti menambahkan tabel baru, menghapus tabel, atau memodifikasi kolom dalam tabel yang ada.
@@ -37,7 +35,6 @@ Database migration adalah proses untuk mengelola perubahan skema basis data seir
 ~ Manajemen Perubahan
 ~ Dokumentasi History
 ~ Selalu Kompatibel dengan Perubahan Versi Aplikasi
-
 ```
 
 ## DB Relational Di GORM
@@ -47,7 +44,6 @@ Database migration adalah proses untuk mengelola perubahan skema basis data seir
 ~ Has One
 ~ Has Many
 ~ Many to Many
-
 ```
 
 ## DB Transaksi di GORM
@@ -58,7 +54,6 @@ Transaksi database menjalankan beberapa perintah SQL dalam satu transaksi yang d
 ```
 go get -u gorm.io/gorm
 go get -u gorm.io/driver/mysql
-
 ```
 
 ## Cara Koneksi Ke Database
@@ -96,7 +91,6 @@ func InitDB() {
 func InitMigrate() {
 	DB.AutoMigrate(&models.User{})
 }
-
 ```
 
 ## Models
@@ -108,7 +102,6 @@ type User struct {
 	Email    string `json:"email" form:"email"`
 	Password string `json:"password" form:"password"`
 }
-
 ```
 
 ## Controller Get All Users
@@ -126,13 +119,11 @@ func GetUsersController(c echo.Context) error {
 		"users":   users,
 	})
 }
-
 ```
 
 ## Controller Get User By Id
 
 ```
-
 // get user by id
 func GetUserController(c echo.Context) error {
 	id := c.Param("id")
@@ -159,7 +150,6 @@ func GetUserController(c echo.Context) error {
 		"user":    users,
 	})
 }
-
 ```
 
 ## Controller Create New User
@@ -178,13 +168,11 @@ func CreateUserController(c echo.Context) error {
 		"user":    user,
 	})
 }
-
 ```
 
 ### Controller Delete User
 
 ```
-
 // delete user by id
 func DeleteUserController(c echo.Context) error {
 	id := c.Param("id")
@@ -211,13 +199,11 @@ func DeleteUserController(c echo.Context) error {
 		"status":  "success",
 	})
 }
-
 ```
 
 ## Controller Update User
 
 ```
-
 // update user by id
 func UpdateUserController(c echo.Context) error {
 	id := c.Param("id")
@@ -254,7 +240,6 @@ func UpdateUserController(c echo.Context) error {
 		"data" : users,
 	})
 }
-
 ```
 
 ## Routing
@@ -273,7 +258,6 @@ func main() {
 	// start the server, and log if it fails
 	e.Logger.Fatal(e.Start(":8000"))
 }
-
 ```
 
 ## Code Structure MVC
@@ -293,7 +277,6 @@ Ini adalah tempat untuk mendefinisikan model-data yang berhubungan dengan basis 
 
 ~ routes
 Direktori ini berisi definisi rute atau endpoint URL untuk aplikasi Anda. Rute menghubungkan permintaan pengguna dengan controller yang sesuai.
-
 ```
 
 

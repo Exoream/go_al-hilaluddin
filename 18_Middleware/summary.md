@@ -30,7 +30,6 @@ Middleware untuk mengontrol akses ke sumber daya berdasarkan izin dan peran peng
 
 ~ Custom Middleware
 Middleware yang Anda buat khusus untuk tugas-tugas kustom dalam aplikasi Anda yang tidak tercakup oleh middleware bawaan atau yang disediakan oleh framework.
-
 ```
 
 ## Contoh Third Party Middleware
@@ -40,7 +39,6 @@ Middleware yang Anda buat khusus untuk tugas-tugas kustom dalam aplikasi Anda ya
 ~ Echo
 ~ Interpose
 ~ Alice
-
 ```
 
 ## Setup Middleware Echo
@@ -55,7 +53,6 @@ Metode echo.Pre() digunakan untuk mendaftarkan middleware pada tingkat root (seb
 ~ RemoveTrailingSlash
 ~ MethodOverride
 ~ Rewrite
-
 ```
 
 ## Echo#Use()
@@ -71,7 +68,6 @@ Metode echo.Use() digunakan untuk mendaftarkan middleware yang akan dieksekusi p
 ~ Secure
 ~ CORS
 ~ Static
-
 ```
 
 ## CORS Middleware
@@ -98,7 +94,6 @@ e.Use(middleware.BasicAuth(func(username, password string, c echo.Context) (bool
     }
     return false, nil
 }))
-
 ```
 
 ## JWT Middleware
@@ -108,9 +103,7 @@ Otentikasi Berbasis Token JWT (JSON Web Token) adalah metode otentikasi yang men
 
 ```
 // Create constants
-
 const SECRET_JWT = "legal"
-
 ```
 
 ```
@@ -120,7 +113,6 @@ type UserResponse struct {
 	Email    string `json:"email" form:"email"`
 	Password string `json:"password" form:"password"`
 }
-
 ```
 
 ```
@@ -145,7 +137,6 @@ func ExtractTokenUserId(e echo.Context) int {
 	}
 	return 0
 }
-
 ```
 
 ```
@@ -168,7 +159,6 @@ func CheckLogin(email string, password string) (models.User, string, error) {
 	}
 	return data, token, nil
 }
-
 ```
 
 ```
@@ -191,7 +181,6 @@ func LoginController(c echo.Context) error {
 	}
 	return c.JSON(http.StatusOK, helpers.SuccessWithDataResponse("Success recieve user data", response))
 }
-
 ```
 
 ```
@@ -199,5 +188,4 @@ func LoginController(c echo.Context) error {
 
 e.POST("/login", controllers.LoginController)
 e.GET("/users", controllers.GetUserController, middlewares.JWTMiddleware())
-
 ```
