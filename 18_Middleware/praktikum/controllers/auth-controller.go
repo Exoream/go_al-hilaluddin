@@ -23,6 +23,6 @@ func LoginController(c echo.Context) error {
 	}
 
 	response := helpers.SuccesResponseAuth(data.ID, data.Name, token)
-	
+
 	return c.JSON(http.StatusOK, helpers.SuccesResponse("Success recieve user data", response))
 }
