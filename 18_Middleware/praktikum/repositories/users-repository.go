@@ -2,26 +2,33 @@ package repositories
 
 import (
 	"db_API/config"
+	"db_API/helpers"
 	"db_API/middlewares"
 	"db_API/models"
+	"errors"
 )
 
-func QueryCheckLoginUser(email string, password string) (models.User, string, error) {
+func QueryCheckLoginUser(email, password string) (models.User, string, error) {
 	var user models.User
-	result := config.DB.Where("email = ? AND password = ?", email, password).First(&user)
-	if result.Error != nil {
-		return models.User{}, "", result.Error
+	tx := config.DB.Where("email = ?", email).First(&user)
+	if tx.Error != nil {
+		return models.User{}, "", tx.Error
 	}
 
-	var token string
-	if result.RowsAffected > 0 {
-		var errToken error
-		token, errToken = middlewares.CreateToken(int(user.ID))
+	if helpers.CheckPasswordHash(user.Password, password) {
+		token, errToken := middlewares.CreateToken(int(user.ID))
 		if errToken != nil {
 			return models.User{}, "", errToken
 		}
+		return user, token, nil
 	}
-	return user, token, nil
+
+	// if !helpers.CheckPasswordHash(user.Password, password) {
+	// 	// Kata sandi tidak cocok
+	// 	return models.User{}, "", errors.New("Incorrect password")
+	// }
+
+	return models.User{}, "", errors.New("Login failed")
 }
 
 func QuerySelectAllUser() ([]models.User, error) {
@@ -42,6 +49,12 @@ func QuerySelectUserById(idUser int) (models.User, error) {
 }
 
 func QueryCreateUser(user *models.User) error {
+	hashedPassword, err := helpers.HashPassword(user.Password)
+	if err != nil {
+		return err
+	}
+	user.Password = hashedPassword
+
 	return config.DB.Save(user).Error
 }
 
