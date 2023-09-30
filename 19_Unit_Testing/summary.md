@@ -59,7 +59,7 @@ Coverage dalam unit testing merujuk pada sejauh mana kode sumber diuji oleh tes 
 
 ## Run Testing
 ```
-go test ./nama_folder - cover
+go test ./nama_folder -cover
 ```
 
 ```
