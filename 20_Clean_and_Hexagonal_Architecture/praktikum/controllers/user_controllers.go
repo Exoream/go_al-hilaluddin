@@ -24,9 +24,7 @@ func NewUserControllers(uc entity.UseCaseInterface) *UserController {
 func (uco *UserController) GetAllUser(c echo.Context) error {
 	idToken := middlewares.ExtractToken(c)
 	if idToken < 1 {
-		return c.JSON(http.StatusUnauthorized, map[string]interface{}{
-			"message": "unauthorized",
-		})
+		return c.JSON(http.StatusUnauthorized, helpers.ErrorResponse("unauthorized"))
 	}
 	responseData, err := uco.userUseCase.FindAllUsers()
 	if err != nil {
