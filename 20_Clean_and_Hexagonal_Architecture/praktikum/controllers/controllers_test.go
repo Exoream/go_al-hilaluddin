@@ -83,6 +83,7 @@ func TestUsersCreateUser(t *testing.T) {
 		}
 		usecase.AssertExpectations(t)
 	})
+
 }
 
 func TestLoginUser(t *testing.T) {
@@ -126,6 +127,37 @@ func TestLoginUser(t *testing.T) {
 
 		if assert.NoError(t, controller.LoginUser(c)) {
 			assert.Equal(t, http.StatusUnauthorized, rec.Code)
+			responseBody := rec.Body.String()
+			var responseData models.ResponseMessage
+			err := json.Unmarshal([]byte(responseBody), &responseData)
+			if assert.NoError(t, err) {
+				assert.Equal(t, expectedErrorMessage, responseData.Message)
+			}
+		}
+		usecase.AssertExpectations(t)
+	})
+
+	t.Run("Failed Bind User", func(t *testing.T) {
+		usecase := new(mocks.UseCaseInterface)
+		controller := NewUserControllers(usecase)
+
+		e := echo.New()
+		validLoginData := map[string]int{
+			"Email":    1,
+		}
+		reqBody, _ := json.Marshal(validLoginData)
+
+		req := httptest.NewRequest(http.MethodPost, "/login", bytes.NewBuffer(reqBody))
+		req.Header.Set(echo.HeaderContentType, echo.MIMEApplicationJSON)
+		rec := httptest.NewRecorder()
+		c := e.NewContext(req, rec)
+		c.SetPath("/login")
+
+		expectedErrorMessage := "eror bind"
+		// usecase.On("CheckLogin", mock.Anything, mock.Anything).Return(entity.Main{}, "", errors.New(expectedErrorMessage)).Once()
+
+		if assert.NoError(t, controller.LoginUser(c)) {
+			assert.Equal(t, http.StatusInternalServerError, rec.Code)
 			responseBody := rec.Body.String()
 			var responseData models.ResponseMessage
 			err := json.Unmarshal([]byte(responseBody), &responseData)
