@@ -6,9 +6,9 @@ Deployment adalah istilah dalam dunia teknologi dan pengembangan perangkat lunak
 Tujuan utama dari deployment adalah untuk membuat aplikasi atau sistem yang telah dikembangkan menjadi tersedia untuk pengguna akhir atau pelanggan. Ini melibatkan penggunaan berbagai metode dan alat untuk menginstal, mengkonfigurasi, menguji, dan memantau aplikasi atau sistem agar berjalan dengan baik di lingkungan produksi. Penyebaran layanan perangkat lunak dapat dilaukan ke berbagai platform, termasuk server, desktop, cloud, dan perangkat mobile.
 
 ## Strategi Deployment
+
 ### Big Bang Deployment
 Big Bang Deployment adalah strategi di mana seluruh perubahan atau pembaruan perangkat lunak diterapkan secara bersamaan ke lingkungan produksi. Tujuannya adalah untuk menggulirkan perubahan secara cepat ke seluruh lingkungan dan menghindari kebingungan antara versi yang berbeda.
-
 #### Keuntungan Big Bang Deployment:
 * Kecepatan implementasi yang tinggi.
 * Sederhana untuk dikelola.
@@ -23,7 +23,6 @@ Big Bang Deployment adalah strategi di mana seluruh perubahan atau pembaruan per
 
 ### Rollout Deployment
 Rollout Deployment adalah strategi di mana perubahan diterapkan secara bertahap ke lingkungan produksi. Ini dapat melibatkan beberapa tahap atau zona. Tujuannya adalah untuk mengendalikan risiko dengan memperkenalkan perubahan secara bertahap dan menguji setiap tahap.
-
 #### Keuntungan Rollout Deployment:
 * Mengurangi risiko dengan pengguliran bertahap.
 * Memungkinkan deteksi masalah dengan cepat.
@@ -37,7 +36,6 @@ Rollout Deployment adalah strategi di mana perubahan diterapkan secara bertahap 
 
 ### Blue/Green Deployment
 Blue/Green Deployment melibatkan dua lingkungan paralel (Blue dan Green). Versi perangkat lunak yang sedang berjalan (misalnya, Blue) tetap aktif, sementara versi baru (misalnya, Green) diterapkan di lingkungan yang terpisah. Tujuannya adalah untuk menghindari downtime dan memungkinkan beralih secara instan antara versi lama dan baru jika terjadi masalah.
-
 #### Keuntungan Blue/Green Deployment:
 * Tidak ada downtime karena versi lama dan baru berjalan bersamaan.
 * Perubahan sanagat cepat
@@ -52,7 +50,6 @@ Blue/Green Deployment melibatkan dua lingkungan paralel (Blue dan Green). Versi 
 
 ### Canary Deployment
 Canary Deployment melibatkan pengguliran perubahan ke sebagian kecil dari lingkungan produksi (kelompok kanari) sebelum diimplementasikan secara luas. Tujuannya adalah untuk mendeteksi masalah atau bug pada tahap awal dan mengukur dampak perubahan secara bertahap.
-
 #### Keuntungan Canary Deployment:
 * Deteksi masalah dengan cepat pada tahap awal.
 * Risiko rendah karena hanya sebagian kecil pengguna yang terpengaruh.
@@ -126,8 +123,8 @@ scp -i </direktori/ssh-key-private> -r </direktori/nama-file-transfer> <username
 ls
 ```
 
-## Cara Membuat Database GCP
-Ketika Anda membuat SQL database atau server, penting untuk mengatur konfigurasi jaringan dengan benar agar dapat diakses dari server lain
+## Cara Membuat Database
+Ketika ingin membuat SQL database atau server, penting untuk mengatur konfigurasi jaringan dengan benar agar dapat diakses dari server lain
 ```
 https://cloud.google.com/sql/docs/mysql/create-manage-databases
 https://cloud.google.com/sql/#section-1
