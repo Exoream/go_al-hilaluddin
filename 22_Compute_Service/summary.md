@@ -110,11 +110,6 @@ Biasanya berada pada folder dibawah ini, gunakan yang .pub (key public). Baca is
 ~/.ssh/id_rsa.pub
 ```
 
-## SSH Remote Menggunakan Key Pair
-```
-ssh -i /path/to/private-key username@public-ip
-```
-
 ## SSH Remote ke VM
 ```
 ssh -i </directory/namafilessh> <username-server>@<public-ipv4>
