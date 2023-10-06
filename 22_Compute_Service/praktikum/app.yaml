@@ -1,6 +1,9 @@
-runtime : go
-env : flex
+runtime: go
+env: flex
 
-runtime_config :
+runtime_config:
   operating_system: "ubuntu22"
   runtime_version: "1.21"
+
+manual_scaling:
+  instances: 1

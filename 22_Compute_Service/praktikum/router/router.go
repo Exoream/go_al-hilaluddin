@@ -16,7 +16,7 @@ func NewRoute(e *echo.Echo, db *gorm.DB) {
 	userController := controllers.NewUserControllers(userUsecase)
 
 	AuthenUsers := e.Group("/users", middlewares.JWTMiddleware())
-	AuthenUsers.GET("", userController.GetAllUser)
+	AuthenUsers.GET("", userController.GetAllUser, middlewares.JWTMiddleware())
 
 	notAuthenUsers := e.Group("/users")
 	notAuthenUsers.POST("", userController.CreateUser)
