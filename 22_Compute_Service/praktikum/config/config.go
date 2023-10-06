@@ -36,7 +36,6 @@ func loadConfig() *AppConfig {
 
 	if err != nil {
 		logrus.Error("Config : Cannot load config file,", err.Error())
-		return nil
 	}
 
 	if val, found := os.LookupEnv("SERVERPORT"); found {

@@ -1,11 +1,14 @@
 version: '3'
 services:
   mysql:
+    container_name: mysql
     image: mysql:latest
     environment:
       MYSQL_ROOT_PASSWORD: password
       MYSQL_DATABASE: clean_code
-  app:
+    ports:
+      - "3306:3306"
+  restapi:
     build:
       context: .
       dockerfile: Dockerfile
@@ -13,3 +16,10 @@ services:
       - "8000:8000"
     depends_on:
       - mysql
+    restart: on-failure
+    environment:
+      DBHOST: mysql
+      DBPORT: 3306
+      DBUSER: root
+      DBPASS: password
+      DBNAME: clean_code
