@@ -96,7 +96,23 @@ https://docs.aws.amazon.com/id_id/ground-station/latest/ug/create-ec2-ssh-key-pa
 * Cara Add SSH keys to VMs
 https://cloud.google.com/compute/docs/connect/add-ssh-
 https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html
+```
 
+## Make Key Pair SSH in Local PC
+```
+ssh-keygen -t ecdsa
+```
+
+## Add Key Public in VM
+Biasanya berada pada folder dibawah ini, gunakan yang .pub (key public). Baca isi key nya dan paste ke VM
+
+```
+~/.ssh/id_rsa.pub
+```
+
+## SSH Remote Menggunakan Key Pair
+```
+ssh -i /path/to/private-key username@public-ip
 ```
 
 ## SSH Remote ke VM
