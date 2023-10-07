@@ -3,7 +3,7 @@ name: Deploy App to Server
 on:
   push:
     tags:
-      - main
+      - cabang
 
 jobs:
   docker:
