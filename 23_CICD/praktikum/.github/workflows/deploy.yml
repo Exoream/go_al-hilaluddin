@@ -32,21 +32,3 @@ jobs:
         file: ./Dockerfile
         push: true
         tags: ${{ secrets.DOCKERHUB_USERNAME }}/cicd:latest
-
-  deploy-prod:
-    runs-on: ubuntu-latest
-    needs: docker
-    steps:
-      - name: Connect to server using SSH
-        uses: appleboy/ssh-action@v0.1.10
-        with:
-          host: ${{ secrets.HOST }}
-          username: ${{ secrets.USERNAME }}
-          key: ${{ secrets.KEY }}
-          port: ${{ secrets.PORT }}
-          script: |
-            docker stop restapi
-            docker rm restapi
-            docker rmi ${{ secrets.DOCKERHUB_USERNAME }}/cicd:latest
-            docker pull ${{ secrets.DOCKERHUB_USERNAME }}/cicd:latest
-            docker run -d -p 8080:8080 -e SERVERPORT=${{ secrets.SERVERPORT }} -e DBUSER=${{ secrets.DBUSER }} -e DBPASS=${{ secrets.DBPASS }} -e DBHOST=${{ secrets.DBHOST }} -e DBPORT=${{ secrets.DBPORT }} -e DBNAME=${{ secrets.DBNAME }} --name restapi ${{ secrets.DOCKERHUB_USERNAME }}/cicd:latest
