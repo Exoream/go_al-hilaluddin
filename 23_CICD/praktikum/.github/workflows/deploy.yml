@@ -1,8 +1,8 @@
-name: Deploy App to Server
+name: Deploy RestAPI to Server
 
 on:
   push:
-    tags:
+    branches:
       - main
 
 jobs:
