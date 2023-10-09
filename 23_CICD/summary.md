@@ -36,17 +36,30 @@ Continuous Delivery: Setiap perubahan kode yang berhasil diuji secara otomatis s
 #### Code and Commit
 * Git
 * Github
+* Bitbucket
 
 #### Build and Config
 * Docker
 * Maven
 * Ansible
+* Jenkins
 
 #### Scan and Test
 * JUnit
 * SonarQube
-* Jenkins
+* Jenkins Pipeline
 * Selenium
+
+#### Release
+* Serena
+* XL Release
+* uDeploy
+
+#### Deploy
+* Kubernetes
+* Docker
+* Google Cloud Engine
+* VMware
 
 ## Kesimpulan
 Continuous Integration (CI) dan Continuous Deployment/Delivery (CD) adalah praktik-praktik penting dalam pengembangan perangkat lunak modern. CI memungkinkan pengujian dan integrasi kode yang lebih cepat dan otomatis, sementara CD memungkinkan pengiriman perangkat lunak yang cepat dan konsisten ke lingkungan produksi. Alat-alat seperti Jenkins, Docker, Maven, Ansible, dan banyak lainnya digunakan dalam tahap-tahap berbeda dari alur kerja CI/CD, termasuk code and commit, build and config, scan and test, release, dan deploy. Keseluruhan, praktik-praktik ini membantu organisasi untuk menghasilkan perangkat lunak berkualitas tinggi, aman, dan responsif dengan efisiensi yang lebih besar dalam menghadapi perubahan pasar yang cepat.
