@@ -10,6 +10,6 @@ COPY . .
 
 RUN go build -o hilal .
 
-EXPOSE 8000
+EXPOSE 8080
 
 CMD ["/app/hilal"]
