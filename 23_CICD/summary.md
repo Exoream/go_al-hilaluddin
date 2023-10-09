@@ -4,13 +4,12 @@
 Continuous Integration (CI) adalah proses otomatis yang digunakan untuk mengintegrasikan berbagai perubahan kode dari berbagai sumber potensial ke dalam repositori kode bersama secara teratur dan sering. Proses ini dapat mencakup kompilasi, pengujian, dan pemeriksaan otomatis lainnya untuk memastikan bahwa perubahan kode tersebut bekerja dengan baik dan tidak mengganggu fungsionalitas yang ada.
 
 ## Siklus Continous Integration
-* Pengembangan Kode: Tim pengembang bekerja pada perubahan kode dalam lingkungan pengembangan mereka.
-* Penggabungan Kode: Perubahan kode diunggah ke repositori kode bersama (misalnya, Git).
-* Pengujian Otomatis: Sistem CI secara otomatis mendeteksi perubahan, mengompilasi kode, dan menjalankan pengujian otomatis.
-* Pemberitahuan Hasil: Sistem CI memberikan laporan tentang hasil pengujian kepada tim pengembang (berhasil atau ada masalah).
-* Pemecahan Masalah (Jika Diperlukan): Jika ada masalah, pengembang memperbaiki kode dan menggabungkannya kembali ke repositori.
-* Penggabungan ke Cabang Utama: Setelah perubahan kode berhasil diuji, kode digabungkan ke cabang utama repositori.
-* Pengulangan Proses: Proses ini berulang secara teratur, dengan setiap perubahan kode yang diunggah diuji secara otomatis.
+* Check-in Change: Tim pengembang mengirimkan perubahan kode ke repositori bersama.
+* Fetch Change: Sistem CI mengambil perubahan terbaru dari repositori.
+* Build: Kode yang diubah dikompilasi menjadi aplikasi yang dapat dijalankan.
+* Test: Aplikasi yang dikompilasi diuji dengan berbagai jenis pengujian, termasuk pengujian unit dan pengujian fungsional.
+* Fail or Success: Hasil pengujian ditentukan, dan apakah perubahan kode berhasil atau gagal diidentifikasi.
+* Notify Success or Failure: Tim atau pemangku kepentingan diberi tahu tentang hasil pengujian, apakah perubahan berhasil atau gagal.
 
 ## Continuous Deployment dan Continuous Delivery
 Continuous Deployment dan Continuous Delivery adalah langkah yang lebih maju dari Continuous Integration (CI) dalam praktik pengembangan perangkat lunak. Dalam kedua praktik ini, tujuannya adalah untuk secara otomatis menyebarkan perubahan kode ke lingkungan produksi atau pengujian, tetapi perbedaan utamanya adalah pada sejauh mana otomatisasi ini dilakukan dan apakah ada campur tangan manusia sebelum perubahan tersebut diterapkan ke lingkungan produksi.
@@ -21,16 +20,20 @@ Continuous Delivery: Setiap perubahan kode yang berhasil diuji secara otomatis s
 
 ## Siklus Continuous Deployment dan Continuous Delivery
 ### Continuous Deployment
-* Pengembangan Kode: Pengembang membuat perubahan kode.
-* Pengujian Otomatis: Perubahan kode diuji otomatis.
-* Deploy Otomatis: Jika pengujian berhasil, perubahan kode secara otomatis diterapkan ke lingkungan produksi.
-* Pengguna Akhir: Perubahan kode langsung tersedia untuk pengguna akhir.
+* Unit Test: Pengujian unit untuk memeriksa bagian-bagian kecil kode. (Auto)
+* Platform Test: Pengujian aplikasi pada platform yang sesuai. (Auto)
+* Deliver to Staging: Pengiriman ke lingkungan staging untuk pengujian lebih lanjut. (Auto)
+* Application Acceptance Test: Pengujian oleh pengguna atau pemangku kepentingan. (Auto)
+* Deploy to Production: Implementasi otomatis ke produksi. (Auto)
+* Post Deploy Tests: Pengujian pasca-implementasi. (Auto)
 
 ### Continuous Delivery
-* Pengembangan Kode: Pengembang membuat perubahan kode.
-* Pengujian Otomatis: Perubahan kode diuji otomatis.
-* Deploy Manual: Jika pengujian berhasil, perubahan kode siap untuk diimplementasikan ke produksi, tetapi penerapannya memerlukan campur tangan manusia.
-* Pengguna Akhir: Pengiriman ke lingkungan produksi dilakukan secara manual oleh tim pengembang atau tim operasi (DevOps).
+* Unit Test: Pengujian unit untuk memeriksa bagian-bagian kecil kode. (Auto)
+* Platform Test: Pengujian aplikasi pada platform yang sesuai. (Auto)
+* Deliver to Staging: Pengiriman ke lingkungan staging untuk pengujian lebih lanjut. (Auto)
+* Application Acceptance Test: Pengujian oleh pengguna atau pemangku kepentingan. (Auto)
+* Deploy to Production: Implementasi ke produksi. (Manual)
+* Post Deploy Tests: Pengujian pasca-implementasi. (Auto)
 
 ## Contoh Tools Yang Digunakan
 #### Code and Commit
