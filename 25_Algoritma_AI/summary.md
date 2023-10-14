@@ -26,7 +26,7 @@ Contoh :
 ## Reactive Machine & Limited Memory
 Saat ini, reactive machine dan limited memory AI sudah diciptakan
 * Reactive machine : tipe AI yang melakukan reaksi terhadap input tanpa pengetahuan masa lampau dan hanya spesifik melakukan tugas tertentu. Contoh : Machine learning, recomnendation engine, Deep blue (Mesin catur IBM)
-* Limited memory : pengembangan dari reactive machine, sudah dilengkapi dengan kemampuan mengevaluasi situasi masa lampau. Contoh : deep learning , reinforcement learning, self-drivinf cars
+* Limited memory : pengembangan dari reactive machine, sudah dilengkapi dengan kemampuan mengevaluasi situasi masa lampau. Contoh: deep learning , reinforcement learning, self-drivinf cars
 
 ## Definisi Algoritma
 * Sebuah set untruksi yang diberikan kepada komputer untuk memecahkan masalah atau mencapai sebuah tujuan, contoh : menghitung luas segitiga
